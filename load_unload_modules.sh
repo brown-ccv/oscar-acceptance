@@ -11,7 +11,7 @@ is_success() {
   if [ $1 -ne 0 ]; then
      echo "test failed: " $2 >> $resultsfile
   else
-     #echo '.' >> results.out
+     #echo '.' >> $resultsfile 
      echo 'test passed: ' $2 >> $resultsfile
   fi  
 }

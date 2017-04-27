@@ -25,11 +25,3 @@ do
    is_success $? $i
 done
 
-
-# How to exit from interact?
-#commands=("interact -t1")
-#for i in "${commands[@]}"
-#do
-#   ($i; exit)
-#   
-#done

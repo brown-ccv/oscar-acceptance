@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Aim: test that you can read and write in home, scratch, data
 
 resultsfile=read_write.results.out
 
@@ -35,6 +35,3 @@ do
    cat $i/testme
    is_success $? "read $i"
 done
-
-
-# File reads
