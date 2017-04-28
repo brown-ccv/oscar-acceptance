@@ -7,6 +7,8 @@
 # mpi/mvapich2-2.0rc1_intel  mpi/openmpi_2.0.1_intel    
 # mpi/mvapich2-2.0rc1_pgi    mpi/openmpi_2.0.1_pgi   
 
+module load pgi
+
 resultsfile=mpi.results.out
 
 mpi_errors() {
@@ -23,7 +25,8 @@ mods=("mpi/mvapich2-2.0rc1_gcc" "mpi/mvapich2-2.0rc1_intel" "mpi/mvapich2-2.0rc1
 #mods=("mpi/openmpi_2.0.1_intel")
 for i in "${mods[@]}"
 do
-   module load $i  
+   module load $i
+   rm a.out
    mpicc hello_c.c
    #salloc -N 2  srun ./a.out 2>> $resultsfile
    salloc -N 2  srun ./a.out 2>test.err 
