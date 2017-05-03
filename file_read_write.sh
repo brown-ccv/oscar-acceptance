@@ -6,7 +6,7 @@ resultsfile=read_write.results.out
 is_success() {
   #echo $1
   if [ $1 -ne 0 ]; then
-     echo "test failed: " $2 >> $resultsfile
+     echo "FAILED: " $2 >> $resultsfile
   else
      #echo '.' >> $resultsfile
      echo 'test passed: ' $2 >> $resultsfile
