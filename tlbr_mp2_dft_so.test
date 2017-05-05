@@ -1,0 +1,344 @@
+***,TlBr
+memory,24,m
+gprint,basis,orbital,civector;
+gthresh,grid=1.d-8,energy=1.d-9
+r=4.932185
+geometry={
+   tl;
+   br,tl,r;
+}
+basis={
+   ecp,tl,60,5;
+   1;
+   2,1.,0.;
+   2;
+   2,12.204159350477, 281.284979243617;
+   2, 8.316911500275,  62.433015241548;
+   3;
+   2, 9.285243392388, 216.838152426201;
+   2, 5.484887212367,  13.985499036596;
+   2, 5.484887212367,  3.034284357;
+   2;
+   2, 7.976065866131,  89.777359242480;
+   2, 4.483812911432,  25.895445045927;
+   2;
+   2, 5.596261463829,  36.927827191399;
+   2, 2.837663300887,   6.810049745855;
+   1;
+   2, 2.562307      ,  -3.90281006    ;
+   ecp,br,28,4;
+   1;
+   2,  1.000000,  0.000000;
+   2;
+   2,  5.021800, 61.513721;
+   2,  2.510900,  9.021493;
+   2;
+   2,  4.281400, 53.875864;
+   2,  2.140700,  4.629402;
+   2;
+   2,  2.880000, 20.849677;
+   2,  1.440000,  2.965444;
+   1;
+   2,  2.720700, -8.161493;
+   s,tl,   40.574052, 31.151650, 26.951526, 16.207360,  5.739103, \
+   2.867448,  1.232208,  0.301547,  0.161345,  0.064096, \
+   0.022000;
+   c,1.6,-.051429,.467401,-.644321,.493168,-.990768,.293634;
+   p,tl,   39.130985, 26.883236, 16.168218,  9.858356,  6.156170, \
+   2.902270,  1.449985,  0.658153,  0.198485,  0.075444, \
+   0.029385;
+   c,1.6,.006024,-.023938,.057458,.047986,-.391069,.220391;
+   d,tl,   35.291187, 15.199243, 10.813840,  9.546506,  1.821229, \
+   0.748542,  0.272317,  0.054117;
+   c,1.5,.001090,-.019433,.183920,-.206732,.418960;
+   s,br,150.601735,4.829122,2.210371,.507162,.326043,.120275,.044;
+   c,1.2,.0014565,.4124615;
+   p,br,41.713235,5.260912,2.714091,.594472,.230393,.072212,.023;
+   c,1.2,.0001877,.0707225;
+}
+{rhf;occ,7,3,3,1;wf,28,1;save,2130.2;}
+mp2
+emp=energy
+set,gradtyp='ALASKA'
+{forces; varsav}
+gradmp=gradz
+
+{grid;gridthr,1.d-8}
+!{grid;gridthr,1.d-12; lmin,35,35,35,35}
+{rks;occ,7,3,3,1;wf,28,1;save,2130.2;}
+eks=energy
+set,gradtyp='ALASKA'
+{forces; varsav}
+gradks=gradz
+
+basis={
+   ecp,tl,60,5,1;
+   1;
+   2,1.,0.;
+   2;
+   2,12.204159350477, 281.284979243617;
+   2, 8.316911500275,  62.433015241548;
+   3;
+   2, 9.285243392388, 216.838152426201;
+   2, 5.484887212367,  13.985499036596;
+   2, 5.484887212367,  3.034284357;
+   2;
+   2, 7.976065866131,  89.777359242480;
+   2, 4.483812911432,  25.895445045927;
+   2;
+   2, 5.596261463829,  36.927827191399;
+   2, 2.837663300887,   6.810049745855;
+   1;
+   2, 2.562307      ,  -3.90281006    ;
+   1;
+   2, 5.484887212367, 24.45087211*2/3;
+   ecp,br,28,4,1;
+   1;
+   2,  1.000000,  0.000000;
+   2;
+   2,  5.021800, 61.513721;
+   2,  2.510900,  9.021493;
+   2;
+   2,  4.281400, 53.875864;
+   2,  2.140700,  4.629402;
+   2;
+   2,  2.880000, 20.849677;
+   2,  1.440000,  2.965444;
+   1;
+   2,  2.720700, -8.161493;
+   2;
+   2,  4.281400, -0.445174*2/3;
+   2,  2.140700,  1.091206*2/3;
+   s,tl,   40.574052, 31.151650, 26.951526, 16.207360,  5.739103, \
+   2.867448,  1.232208,  0.301547,  0.161345,  0.064096, \
+   0.022000;
+   c,1.6,-.051429,.467401,-.644321,.493168,-.990768,.293634;
+   p,tl,   39.130985, 26.883236, 16.168218,  9.858356,  6.156170, \
+   2.902270,  1.449985,  0.658153,  0.198485,  0.075444, \
+   0.029385;
+   c,1.6,.006024,-.023938,.057458,.047986,-.391069,.220391;
+   d,tl,   35.291187, 15.199243, 10.813840,  9.546506,  1.821229, \
+   0.748542,  0.272317,  0.054117;
+   c,1.5,.001090,-.019433,.183920,-.206732,.418960;
+   s,br,150.601735,4.829122,2.210371,.507162,.326043,.120275,.044;
+   c,1.2,.0014565,.4124615;
+   p,br,41.713235,5.260912,2.714091,.594472,.230393,.072212,.023;
+   c,1.2,.0001877,.0707225;
+   d,br,even,4,2.3406,.51233;
+}
+int
+{rhf;occ,7,3,3,1;wf,28,1;}
+ehf1=energy
+set,gradtyp='ALASKA'
+{forces; varsav}
+gradsoala=gradz
+set,gradtyp='CADPAC'
+{forces; varsav}
+gradsocad=gradz
+
+r=4.947303
+geometry={
+   tl;
+   br,tl,r;
+}
+basis={
+   ecp,tl,60,5,1;
+   1;
+   2,1.,0.;
+   2;
+   2,12.204159350477, 281.284979243617;
+   2, 8.316911500275,  62.433015241548;
+   3;
+   2, 9.285243392388, 216.838152426201;
+   2, 5.484887212367,  13.985499036596;
+   2, 5.484887212367,  3.034284357;
+   2;
+   2, 7.976065866131,  89.777359242480;
+   2, 4.483812911432,  25.895445045927;
+   2;
+   2, 5.596261463829,  36.927827191399;
+   2, 2.837663300887,   6.810049745855;
+   1;
+   2, 2.562307      ,  -3.90281006    ;
+   1;
+   2, 5.484887212367, 24.45087211*2/3;
+   ecp,br,28,4,1;
+   1;
+   2,  1.000000,  0.000000;
+   2;
+   2,  5.021800, 61.513721;
+   2,  2.510900,  9.021493;
+   2;
+   2,  4.281400, 53.875864;
+   2,  2.140700,  4.629402;
+   2;
+   2,  2.880000, 20.849677;
+   2,  1.440000,  2.965444;
+   1;
+   2,  2.720700, -8.161493;
+   2;
+   2,  4.281400, -0.445174*2/3;
+   2,  2.140700,  1.091206*2/3;
+   s,tl,   40.574052, 31.151650, 26.951526, 16.207360,  5.739103, \
+            2.867448,  1.232208,  0.301547,  0.161345,  0.064096, \
+            0.022000;
+   c,1.6,-.051429,.467401,-.644321,.493168,-.990768,.293634;
+   p,tl,   39.130985, 26.883236, 16.168218,  9.858356,  6.156170, \
+            2.902270,  1.449985,  0.658153,  0.198485,  0.075444, \
+            0.029385;
+   c,1.6,.006024,-.023938,.057458,.047986,-.391069,.220391;
+   d,tl,   35.291187, 15.199243, 10.813840,  9.546506,  1.821229, \
+            0.748542,  0.272317,  0.054117;
+   c,1.5,.001090,-.019433,.183920,-.206732,.418960;
+   f,tl,1.8,.75,.27;
+   g,tl,1.45,.5;
+   h,tl,1.35;
+   s,br,150.601735,4.829122,2.210371,.507162,.326043,.120275,.044;
+   c,1.2,.0014565,.4124615;
+   p,br,41.713235,5.260912,2.714091,.594472,.230393,.072212,.023;
+   c,1.2,.0001877,.0707225;
+   d,br,even,4,2.3406,.51233;
+   f,br,even,3,2.1815,.51100;
+   g,br,even,2,2.4580,.60562;
+   h,br,2.1;
+}
+{rhf;occ,7,3,3,1;wf,28,1;save,2130.2;}
+ehf2=energy
+
+{multi;occ,7,4,4,1;frozen,2,1,1;closed,6,3,3,1;start,2130.2;orbital,2140.2; wf,28,1,0; wf,28,2,2;wf,28,3,2;}
+emultisinglet=energy(1)
+emultitriplet=energy(2)
+{mrci;occ,7,4,4,1;core,2,1,1;closed,6,3,3,1;orbital,2140.2;wf,28,1,0;save,6010.2;}
+emrci=energy
+{mrci;occ,7,4,4,1;core,2,1,1;closed,6,3,3,1;orbital,2140.2;wf,28,2,2;save,6022.2;}
+{mrci;occ,7,4,4,1;core,2,1,1;closed,6,3,3,1;orbital,2140.2;wf,28,3,2;save,6032.2;}
+eci=energy
+ci;hlsmat,ecp,6010.2,6022.2,6032.2;
+esplit=energy(2)-energy(1)
+
+EMPOLD=-184.32229405
+GRADMP_OLD=[0.018686069,-0.018686069]
+!EKSOLD=-185.19918508
+!GRADKS_OLD=[0.01116457,-0.01116457]
+EKSOLD=-185.199185023503               ! grid=1e-12, lmin,35
+!GRADKS_OLD=[0.011165184,-0.011165184]  ! grid=1e-12, lmin,35
+GRADKS_OLD=[ 0.01116524 -0.01116535  ]
+
+EHFOLD1=-184.26803543
+GRADSO_OLD=[0.018267395,-0.018267395]
+EHFOLD2=-184.27149786
+EMULTISINGLETOLD=-184.27411969
+EMULTITRIPLETOLD=-184.13554430
+EMRCIOLD=-184.85803291
+ECIOLD=-184.70556890
+ESPLITOLD=0.14240383
+
+ierr=0
+delemp=max(abs(emp-empold))
+delgradmp=max(abs(gradmp-gradmp_old))
+deleks=max(abs(eks-eksold))
+delgradks=max(abs(gradks-gradks_old))
+delehf1=max(abs(ehf1-ehfold1))
+delgradsoala=max(abs(gradsoala-gradso_old))
+delgradsocad=max(abs(gradsocad-gradso_old))
+delehf2=max(abs(ehf2-ehfold2))
+delemultisinglet=max(abs(emultisinglet-emultisingletold))
+delemultitriplet=max(abs(emultitriplet-emultitripletold))
+delemrci=max(abs(emrci-emrciold))
+deleci=max(abs(eci-eciold))
+delesplit=max(abs(esplit-esplitold))
+if(delemp.gt.1.d-7) ierr=1
+if(delgradmp.gt.1.d-7) ierr=1
+if(deleks.gt.1.d-7) ierr=1
+if(delgradks.gt.1.d-7) ierr=1
+if(delehf1.gt.1.d-7) ierr=1
+if(delgradsoala.gt.1.d-7) ierr=1
+if(delgradsocad.gt.1.d-7) ierr=1
+if(delehf2.gt.1.d-7) ierr=1
+if(delemultisinglet.gt.1.d-7) ierr=1
+if(delemultitriplet.gt.1.d-7) ierr=1
+if(delemrci.gt.1.d-7) ierr=1
+if(deleci.gt.1.d-7) ierr=1
+if(delesplit.gt.1.d-7) ierr=1
+
+if(ierr.eq.1) then
+table,prog,emp,emp-empold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for mp2-energy=$delemp.
+
+table,prog,gradmp,gradmp-gradmpold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for mp2-gradient=$delgradmp.
+
+table,prog,eks,eks-eksold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for ks-energy=$deleks.
+
+table,prog,gradks,gradks-gradksold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for ks-gradient=$delgradks.
+
+table,prog,ehf1,ehf1-ehfold1
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for hf-energy(spd)=$delehf1.
+
+table,prog,gradsoala,gradsoala-gradso_old
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for gradsoala=$delgradsoala.
+
+table,prog,gradsocad,gradsocad-gradso_old
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for gradsocad=$delgradsocad.
+
+table,prog,ehf2,ehf2-ehfold2
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for hf-energy(spdfgh)=$delehf2.
+
+table,prog,emultisinglet,emultisinglet-emultisingletold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for multi-energy(singlet)=$delemultisinglet.
+
+table,prog,emultitriplet,emultitriplet-emultitripletold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for multi-energy(triplet)=$delemultitriplet.
+
+table,prog,emrci,emrci-emrciold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for mrci-energy=$delemrci.
+
+table,prog,eci,eci-eciold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for ci-energy=$deleci.
+
+table,prog,esplit,esplit-esplitold
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,ERRORS DETECTED in tlbr_mp2_dft_so.test. Max error for esplit=$delesplit.
+
+else
+table,prog,emp,gradmp,eks,gradks,ehf1,gradsoala,gradsocad,ehf2,emultisinglet,emultitriplet,emrci,eci
+save,test.log
+title,Results for job tlbr_mp2_dft_so.test
+title,No errors in tlbr_mp2_dft_so.test, max error for mp2-energy=$delemp,
+title,max error for mp2-gradient=$delgradmp,
+title,max error for ks-energy=$deleks, max error for ks-gradient=$delgradks
+title,max error for hf-energy(spd)=$delehf1,
+title,max error for gradsoala=$delgradsoala, max error for gradsocad=$delgradsocad,
+title,max error for hf-energy(spdfgh)=$delehf2,
+title,max error for emultisinglet=$delemultisinglet, max error for emultitriplet=$delemultitriplet,
+title,max error for emrci=$delemrci, max error for eci=$deleci, max error for esplit=$delesplit
+endif
+---
+! kate: syntax fortran;
