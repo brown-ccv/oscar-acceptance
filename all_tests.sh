@@ -7,6 +7,7 @@
 ./load_unload_modules.sh
 ./run_mpi.sh
 ./submit_queues.sh
+./module_defaults.sh
 
 
 echo "******************"
