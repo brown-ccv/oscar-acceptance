@@ -12,7 +12,7 @@ cat << EOF2 > check_results.sh
 #SBATCH -o ../molpro.result.out
 grep real molpro-test.out
 
-if ! grep ERRORS test.log; then
+if grep ERRORS test.log; then
 echo "FAILED: errors in molpro run"
 fi 
 
