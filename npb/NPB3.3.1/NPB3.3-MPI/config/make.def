@@ -30,7 +30,7 @@
 # This is the fortran compiler used for MPI programs
 #---------------------------------------------------------------------------
 #MPIF77 = mpif77
-MPIF77 = scorep mpif77
+MPIF77 = mpif77
 
 # This links MPI fortran programs; usually the same as ${MPIF77}
 FLINK	= $(MPIF77)
