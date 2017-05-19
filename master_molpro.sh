@@ -6,7 +6,7 @@ rm -r molpro
 mkdir molpro
 cp tlbr_mp2_dft_so.test molpro
 
-cat << EOF2 > check_results.sh
+cat << EOF2 > check_molpro.sh
 #!/bin/bash
 #SBATCH -n 1
 #SBATCH -o ../molpro.result.out
@@ -31,7 +31,7 @@ cat <<\EOF > molpro.sh
 module load Molpro/2015_gcc
 module load mpi/mvapich2-2.0rc1_gcc
 
-sbatch --dependency=afterok:$SLURM_JOB_ID ../check_results.sh
+sbatch --dependency=afterok:$SLURM_JOB_ID ../check_molpro.sh
 
 time molpro -n 8 tlbr_mp2_dft_so.test
 EOF

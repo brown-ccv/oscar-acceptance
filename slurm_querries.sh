@@ -18,7 +18,7 @@ is_success() {
 $date > $resultsfile 
 
 # Slurm commands
-commands=("myq" "squeue" "nodes" "nodestat" "condos" "myquota")
+commands=("myq" "squeue" "nodes" "nodestat" "condos" "condo" "myquota")
 for i in "${commands[@]}"
 do
    $i 
