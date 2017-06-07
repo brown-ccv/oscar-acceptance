@@ -6,11 +6,26 @@
 # gpu001 vs gpu002
 # node401-node424 [node408] is vnc
 
+#global:
+count=0
 testdir=$(pwd)
 
-node=("login003" "login004")
+# function to check if counts are different
+yumdiff () {
 
-count=0
+   lines=`wc -l < $1`
+   if ((count == 0)); then  #first time 
+     echo $lines
+     count=$lines
+   else # already got a line count
+      if((count != $lines)); then
+         echo "ERROR: yum list installed different" $1
+      fi  
+   fi  
+}
+
+# login nodes
+node=("login003" "login004")
 
 for n in "${node[@]}"
 do
@@ -24,17 +39,7 @@ do
 EOF
 
    # wc
-   lines=`wc -l < $n.out`
-   if ((count == 0)); then  #first time 
-     echo $lines
-     count=$lines
-   else # already got a line count
-      if((count != $lines)); then
-         echo "ERROR: yum list installed different"
-      fi
-   fi 
-
-
-
+   yumdiff $n.out
 
 done
+
