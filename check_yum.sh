@@ -24,8 +24,32 @@ yumdiff () {
    fi  
 }
 
+# function to loop through 'identical' nodes
+nodeloop () {
+for n in "${node[@]}"
+do
+
+   ssh -T $n << EOF
+   echo $HOSTNAME
+   cd $testdir
+   module unload python
+   yum list installed > $n.out
+   exit
+EOF
+
+   # wc
+   yumdiff $n.out
+
+done
+}
+
 # login nodes
-node=("login003" "login004")
+loginnodes=("login003" "login004")
+
+# compute nodes
+computenodes=("node401" "node402" "node403" "node404" "node405" "node406" "node407" "node409" \
+              "node410" "node411" "node412" "node413" "node414" "node415" "node416" "node417" \
+              "node418" "node419" "node420" "node421" "node422" "node423" "node424")
 
 for n in "${node[@]}"
 do
