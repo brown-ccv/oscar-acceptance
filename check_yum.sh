@@ -12,7 +12,7 @@ rm -r yumtests
 mkdir yumtests
 cd yumtests
 testdir=$(pwd)
-
+resultfile="../yum.out"
 
 # function to check if counts are different
 yumdiff () {
@@ -23,7 +23,7 @@ yumdiff () {
      count=$lines
    else # already got a line count
       if((count != $lines)); then
-         echo "ERROR: yum list installed different" $1
+         echo "FAILED: yum list installed different" $1 >> $resultfile
       fi  
    fi  
 }
@@ -48,6 +48,9 @@ EOF
 
 done
 }
+
+# Tests:
+date > $resultfile
 
 # login nodes
 loginnodes=("login003" "login004")
