@@ -19,14 +19,14 @@ cat <<EOF > npb_centos.sh
 
 #SBATCH -N 4-4 
 #SBATCH --ntasks-per-node=16
-#SBATCH -o $TESTDIR/npb-test-centos.out
-#SBATCH -e $TESTDIR/npb-test-centos.out
+#SBATCH -o $TESTDIR/npb-test-D-centos.%j.out
+#SBATCH -e $TESTDIR/npb-test-D-centos.%j.out
 #SBATCH -D $NPBDIR
 #SBATCH -t 1:00:00
 
 module load $MPIMOD
 
-srun -n 64 bin/bt.D.64
+time srun -n 64 bin/bt.D.64
 
 EOF
 
