@@ -19,9 +19,9 @@ mpi_errors() {
 
 date > $resultsfile 
 
-# Slurm commands
+# Slurm commands - pgi has a bug that affects openmpi
 mods=("mpi/mvapich2-2.0rc1_gcc" "mpi/mvapich2-2.0rc1_intel" "mpi/mvapich2-2.0rc1_pgi" \
-      "mpi/openmpi_2.0.1_gcc" "mpi/openmpi_2.0.1_intel" "mpi/openmpi_2.0.1_pgi")
+      "mpi/openmpi_2.0.1_gcc" "mpi/openmpi_2.0.1_intel") # "mpi/openmpi_2.0.1_pgi")
 #mods=("mpi/openmpi_2.0.1_intel")
 for i in "${mods[@]}"
 do
