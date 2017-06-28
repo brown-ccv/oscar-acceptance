@@ -77,6 +77,7 @@ cat << \EOF > array.sh
 
 #SBATCH -e %A-%a.err
 #SBATCH -o %A-%a.out
+#SBATCH -C 7.3
 
 # This gives 1000 checks
 #sbatch --dependency=afterok:$SLURM_JOB_ID ../check_array.sh

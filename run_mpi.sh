@@ -29,7 +29,7 @@ do
    rm a.out
    mpicc hello_c.c
    #salloc -N 2  srun ./a.out 2>> $resultsfile
-   salloc -N 2  srun ./a.out 2>test.err 
+   salloc -N 2 -C 7.3 srun ./a.out 2>test.err 
    mpi_errors test.err $i
    module unload $i
 done
