@@ -27,6 +27,7 @@ cat <<EOF > npb.sh
 #SBATCH --mem 50GB
 #SBATCH -D $NPBDIR
 #SBATCH -t 1:00:00
+#SBATCH -C 7.3
 
 module load $MPIMOD
 

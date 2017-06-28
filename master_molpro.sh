@@ -27,6 +27,7 @@ cat <<\EOF > molpro.sh
 #SBATCH -o molpro-test.out
 #SBATCH -e molpro-test.out
 #SBATCH -D molpro
+#SBATCH -C 7.3
 
 module load Molpro/2015_gcc
 module load mpi/mvapich2-2.0rc1_gcc

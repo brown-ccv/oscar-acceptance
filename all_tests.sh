@@ -8,7 +8,8 @@
 ./run_mpi.sh
 ./submit_queues.sh
 ./module_defaults.sh
-./check_yum.sh
+echo "** Not running check yum **"
+#./check_yum.sh
 
 echo "******************"
 echo "** test results **"
