@@ -39,7 +39,8 @@ do
    ssh -T $n << EOF
    cd $testdir
    module unload python
-   yum list installed > $n.out
+   #yum list installed > $n.out
+   rpm -qa > $n.out
    exit
 EOF
 
@@ -63,8 +64,8 @@ computenodes=("node401" "node402" "node403" "node404" "node405" "node406" "node4
 # gpunodes
 gpunodes=("gpu001" "gpu002")
 
-# vncnodes
-vncnodes=("node408" "cave020")
+# vncnodes I don't think node408 is supposed to be vnc
+vncnodes=("node408" "cave020" "gpu716")
 
 count=0
 nodeloop "${loginnodes[@]}"
