@@ -1,6 +1,7 @@
 #!/bin/bash
 
 resultsfile=old.queues.results.out
+temporaryfile=test.err
 
 queue_errors() {
    if ! grep "invalid partition specified" "$1"
@@ -26,8 +27,9 @@ old_partitions=("DEFAULT" \
 
 for i in "${old_partitions[@]}"
 do
-   salloc -n 1 -p $i srun echo "hello" 2> test.err
-   queue_errors test.err $i
+   salloc -n 1 -p $i srun echo "hello" 2> $temporaryfile
+   queue_errors $temporaryfile $i
 done
 
-
+#cleanup
+rm $temporaryfile

@@ -4,6 +4,7 @@
 
 
 resultsfile=queues.results.out
+temporaryfile=temp.err
 
 queue_errors() {
    if grep error "$1" 
@@ -19,7 +20,10 @@ queues=("batch" "debug" "gpu" "bibs-gpu" "vnc")
 #queues=("debug")
 for i in "${queues[@]}"
 do
-   salloc -n 1 -p $i srun echo "hello" 2> test.err
-   queue_errors test.err $i
+   salloc -n 1 -p $i srun echo "hello" 2> $temporaryfile
+   queue_errors $temporaryfile $i
 done
+
+# cleanup
+rm $temporaryfile
 
