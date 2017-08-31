@@ -9,7 +9,8 @@
 
 module load pgi
 
-resultsfile=mpi.results.out
+s=$(basename -- "$0")
+resultsfile="results."${s%.*}
 temporaryfile=test.err
 
 mpi_errors() {

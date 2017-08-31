@@ -1,6 +1,7 @@
 #!/bin/bash
 
-resultsfile=old.queues.results.out
+s=$(basename -- "$0")
+resultsfile="results."${s%.*}
 temporaryfile=test.err
 
 queue_errors() {

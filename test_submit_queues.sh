@@ -2,8 +2,8 @@
 
 # Aim: test that you can submit to each of the queues
 
-
-resultsfile=queues.results.out
+s=$(basename -- "$0")
+resultsfile="results."${s%.*}
 temporaryfile=temp.err
 
 queue_errors() {

@@ -2,6 +2,7 @@
 
 # Aim: compare list of yum installed packages
 
+# See #Tests for which nodes are compared against each other
 # login003 vs login004
 # gpu001 vs gpu002
 # node401-node424 [node408] is vnc
@@ -12,7 +13,8 @@ rm -r yumtests
 mkdir yumtests
 cd yumtests
 testdir=$(pwd)
-resultfile="../yum.out"
+s=$(basename -- "$0")
+resultsfile="../results."${s%.*}
 
 # function to check if counts are different
 yumdiff () {
@@ -23,7 +25,7 @@ yumdiff () {
      count=$lines
    else # already got a line count
       if((count != $lines)); then
-         echo "FAILED: yum list installed different" $1 >> $resultfile
+         echo "FAILED: yum list installed different" $1 >> $resultsfile
       fi  
    fi  
 }
@@ -51,15 +53,14 @@ done
 }
 
 # Tests:
-date > $resultfile
+date > $resultsfile
 
 # login nodes
 loginnodes=("login003" "login004")
 
 # compute nodes
-computenodes=("node401" "node402" "node403" "node404" "node405" "node406" "node407" "node409" \
-              "node410" "node411" "node412" "node413" "node414" "node415" "node416" "node417" \
-              "node418" "node419" "node420" "node421" "node422" "node423" "node424" "smp015")
+computenodes=("node401" "node402" "node403" "node404" "node405" "node406" "node407" \
+              "node475" "node476" "smp015")
 
 # gpunodes
 gpunodes=("gpu001" "gpu002")

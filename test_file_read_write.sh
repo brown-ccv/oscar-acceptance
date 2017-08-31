@@ -1,7 +1,8 @@
 #!/bin/bash
 # Aim: test that you can read and write in home, scratch, data
 
-resultsfile=read_write.results.out
+s=$(basename -- "$0")
+resultsfile="results."${s%.*}
 
 is_success() {
   #echo $1

@@ -2,7 +2,8 @@
 
 # Aim: check if modulefiles have a default
 
-resultsfile=defaults.out
+s=$(basename -- "$0")
+resultsfile="results."${s%.*}
 
 date > $resultsfile
 

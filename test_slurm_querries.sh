@@ -2,8 +2,8 @@
 # Aim test all the querry commands associatd with slurm
 # note if myquota is failing because of sudo this test script will hang
 
-
-resultsfile=slurmquerry.out
+s=$(basename -- "$0")
+resultsfile="results."${s%.*}
 
 is_success() {
   #echo $1

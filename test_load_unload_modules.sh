@@ -6,7 +6,8 @@
 # Note module load returns 0 (succss) when a module does not load
 # so you have to check the message
 
-resultsfile=module.results.out
+s=$(basename -- "$0")
+resultsfile="results."${s%.*}
 
 is_success() {
   #echo $1
