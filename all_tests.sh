@@ -1,18 +1,20 @@
 #!/bin/bash
 # Run all acceptance tests
 
-./file_read_write.sh
-./old_queues.sh
-./slurm_querries.sh
-./load_unload_modules.sh
-./run_mpi.sh
-./submit_queues.sh
-./module_defaults.sh
-./check_yum.sh
+rm *.out 
+
+./test_file_read_write.sh
+./test_old_queues.sh
+./test_slurm_querries.sh
+./test_load_unload_modules.sh
+./test_run_mpi.sh
+./test_submit_queues.sh
+./test_module_defaults.sh
+./test_check_yum.sh
 
 echo "******************"
 echo "** test results **"
 echo "******************"
 
 
-grep FAILED *.out
+grep FAILED results.test* | tee all_failed.results
