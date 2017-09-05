@@ -15,7 +15,7 @@ is_success() {
   fi
 }
 
-$date > $resultsfile 
+date > $resultsfile 
 
 # Slurm commands
 commands=("myq" "squeue" "nodes" "nodestat" "condos" "condo" "myquota")
