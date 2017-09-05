@@ -16,7 +16,7 @@ date > $testsran
 tear_down() {
   grep FAILED results.test* | tee $fails
   tarfile=results."$(date +%F-%H%M%S)".tgz
-  tar cvzf $tarfile results.test* $fails
+  tar cvzf $tarfile results.test* $fails $testsran
   rm results.test*
 cat <<EOF > README
 Tests results for Oscar.  
@@ -62,7 +62,7 @@ else                      # run given tests
    for t in "${tests[@]}";
    do 
       echo $t > $testsran
-      ./$1
+      ./$t
       count=$((count+1))
    done
 fi
