@@ -1,29 +1,52 @@
 #!/bin/bash
 # Run acceptance tests
 
+#-----------------------------------------------------------------
+#                       ---- Globals ---
+#-----------------------------------------------------------------
 # File names
 testsran="list_of_tests_ran" # file listing which tests ran
 count=0              # count how many tests ran
 fails=all_failed.results
+#-----------------
+#-----------------------------------------------------------------
 
+#-----------------------------------------------------------------
+#                       --- Functions ---
+#-----------------------------------------------------------------
+# -- Initialize test enviroment --
 setup () {
   echo "removing old test files"
-  #rm *.out
-  #rm results.test*
+  for f in *.out; do
+     [ -e "$f" ] || continue
+     echo $f
+     rm $f
+  done
+  [ -e results.out ] && rm results.test
 date > $testsran
 }
+# -------------------------------
 
+#-- End test environment ----
 tear_down() {
-  grep FAILED results.test* | tee $fails
-  tarfile=results."$(date +%F-%H%M%S)".tgz
-  tar cvzf $tarfile results.test* $fails $testsran
-  rm results.test*
 cat <<EOF > README
 Tests results for Oscar.  
 EOF
-
+  grep FAILED results.test* | tee $fails
+  tarfile=results."$(date +%F-%H%M%S)".tgz
+  tar czf $tarfile results.test* $fails $testsran README
+  rm results.test*
+  rm README
+  rm all_failed.results
 }
+#-----------------------------
+#-----------------------------------------------------------------
 
+
+#-----------------------------------------------------------------
+#                     --- Test script ---
+#-----------------------------------------------------------------
+#-- Parse in
 # check there is an argumment
 if [ $# -lt 1 ]; then
   echo -e "Usage: $(basename $0) [test names] \n To run all tests:  run_test all"
