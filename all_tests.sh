@@ -38,6 +38,7 @@ EOF
   rm results.test*
   rm README
   rm all_failed.results
+  rm $testsran
 }
 #-----------------------------
 #-----------------------------------------------------------------
@@ -75,16 +76,16 @@ setup  # remove any existing test results
 #------------------------
 # Start of running tests
 #------------------------
-if [ run_all == 1 ]; then # run all tests
+if [ $run_all == 1 ]; then # run all tests
    for t in test_*; do
-     echo $t > $testsran
+     echo $t >> $testsran
      ./$t
      count=$((count+1))
    done
 else                      # run given tests
    for t in "${tests[@]}";
    do 
-      echo $t > $testsran
+      echo $t >> $testsran
       ./$t
       count=$((count+1))
    done

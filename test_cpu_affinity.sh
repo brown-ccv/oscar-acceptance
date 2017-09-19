@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Aim: test the processor affinity 
-#  This test uses 2 Nodes with 4 tasks each in exclusive mode
+#  This test uses 2 Nodes with 4 tasks in exclusive mode
 
 s=$(basename -- "$0")
 resultsfile="results."${s%.*}
@@ -34,7 +34,7 @@ date > $resultsfile
 
 # compile affinity code
 module load mpi/mvapich2-2.3a_gcc
-#export MV2_ENABLE_AFFINITY=0  # Use this to test the test
+export MV2_ENABLE_AFFINITY=0  # Use this to test the test
 cd affinity
 make
 cd ..
