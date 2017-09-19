@@ -34,7 +34,7 @@ date > $resultsfile
 
 # compile affinity code
 module load mpi/mvapich2-2.3a_gcc
-export MV2_ENABLE_AFFINITY=0
+#export MV2_ENABLE_AFFINITY=0  # Use this to test the test
 cd affinity
 make
 cd ..
