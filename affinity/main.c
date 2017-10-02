@@ -16,9 +16,8 @@ int main(int argc, char** argv)
     MPI_Get_processor_name(processor_name, &processor_name_len);
 
     int cpu_id = get_cpu_id();
-    sleep(100);
-    printf("Hello from process %03d out of %03d, hostname %s, cpu_id %d\n", 
-        id, np, processor_name, cpu_id);
+    printf("%d.%d\n", 
+        id, cpu_id);
 
     MPI_Finalize();
     return 0;
