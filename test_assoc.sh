@@ -5,7 +5,6 @@
 
 s=$(basename -- "$0")
 resultsfile="results."${s%.*}
-temporaryfile=test.err
 
 if [[ $(sacctmgr list assoc | grep -m 1 ivy) ]]; then
   echo FAILED ivy in assoc > $resultsfile
