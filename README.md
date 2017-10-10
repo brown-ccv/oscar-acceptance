@@ -7,29 +7,29 @@ slurm_querries.sh - runs the slurm querry commands
 
 
 To test:
-* slurm:
-myq
-squeue
-sbatch 
-interact
-salloc
-array jobs
-nodes
-nodestat
-condos
-sacct
-sacctmgr
+*slurm*:
+- myq
+- squeue
+- sbatch 
+- interact
+- salloc
+- array jobs
+- nodes
+- nodestat
+- condos
+- sacct
+- sacctmgr
 
-* writing files
-home
-data
-scratch
+*writing files*
+- home
+- data
+- scratch
 
-* overload nodes
+*overload nodes*
 
-* Programs
-Vasp
-LAMMPS
+*Programs*
+- Vasp
+- LAMMPS
 
 
 
