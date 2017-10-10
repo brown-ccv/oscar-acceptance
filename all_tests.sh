@@ -50,7 +50,7 @@ EOF
 #-- Parse in
 # check there is an argumment
 if [ $# -lt 1 ]; then
-  echo -e "Usage: $(basename $0) [test names] \n To run all tests:  run_test all"
+  echo -e "Usage: $(basename $0) [test names] \n To run all tests:  ./all_tests.sh all"
   echo -e " test scrips must start with 'test_*' and print 'FAILED' to 'results.test*'"
   echo    " Output is in tar file results.'date-time'.tgz"
   exit 1

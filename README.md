@@ -1,13 +1,23 @@
 Aim: semi-automated acceptance tests for new systems and downtimes
-Scripts in this directory:
-file_read_write.sh  - test touch, ls, cat for home, data, scratch
-load_unload_modules.sh  - loads and unloads every module
-slurm_querries.sh - runs the slurm querry commands
+
+test scrips must start with 'test_*' and print 'FAILED' to 'results.test*'
+
+Usage: all_tests.sh [test names] 
+Output is in tar file results.'date-time'.tgz
+
+### Example usage ###
+Run all tests:
+
+'''' ./all_tests.sh all''''
+
+
 
 
 
 To test:
+
 *slurm*:
+
 - myq
 - squeue
 - sbatch 
@@ -21,6 +31,7 @@ To test:
 - sacctmgr
 
 *writing files*
+
 - home
 - data
 - scratch
@@ -28,6 +39,7 @@ To test:
 *overload nodes*
 
 *Programs*
+
 - Vasp
 - LAMMPS
 
