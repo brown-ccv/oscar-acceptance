@@ -20,13 +20,12 @@ cat <<\EOF > vasp.sh
 #SBATCH -o vasp-test.out
 #SBATCH -e vasp-test.out
 #SBATCH -D vasp.3_5_COonNi111_rel
-#SBATCH -C 7.3
 
 module load vasp/5.4.1
 
 sbatch --dependency=afterok:$SLURM_JOB_ID ../check_vasp.sh
 
-time srun -n 4 vasp
+time srun --mpi=pmi2 -n 4 vasp
 EOF
 sbatch vasp.sh
 myq
