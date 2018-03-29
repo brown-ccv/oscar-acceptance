@@ -4,7 +4,12 @@
 
 TESTDIR=$PWD
 NPBDIR=/users/hkershaw/scratch/centos7/acceptance_tests/npb/NPB3.3.1/NPB3.3-MPI
-MPIMOD=mpi/debug_mvapich2-2.0rc1_intel
+#MPIMOD=mpi/mvapich2-2.3a_intel 
+#MPIMOD=mpi/mvapich2-2.3a_gcc
+MPIMOD=mpi/mvapich2-2.3a_pgi
+
+# Old mpi version hangs
+#MPIMOD=mpi/debug_mvapich2-2.0rc1_intel
 #MPIMOD=mpi/mvapich2-2.2_intel
 #MPIMOD=mpi/mvapich2-2.0rc1_gcc
 #MPIMOD=mpi/openmpi_2.0.1_intel  
@@ -24,10 +29,9 @@ cat <<EOF > npb.sh
 #SBATCH --ntasks-per-node=16
 #SBATCH -o $TESTDIR/npb-test-D.%j.out
 #SBATCH -e $TESTDIR/npb-test-D.%j.out
-#SBATCH --mem 50GB
+##SBATCH --mem 50GB
 #SBATCH -D $NPBDIR
 #SBATCH -t 1:00:00
-#SBATCH -C 7.3
 
 module load $MPIMOD
 
@@ -37,7 +41,8 @@ module load $MPIMOD
 
 env | grep MV2
 
-srun -n 64 bin/bt.D.64
+#srun -n 64 bin/bt.D.64
+srun --mpi=pmi2 -n 64 bin/bt.D.64
 
 EOF
 
