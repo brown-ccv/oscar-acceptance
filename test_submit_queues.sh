@@ -16,7 +16,7 @@ queue_errors() {
 
 date > $resultsfile
 
-queues=("batch" "debug" "gpu" "bibs-gpu" "vnc")
+queues=("batch" "debug" "gpu" "smp" "skylake" "vnc")
 #queues=("debug")
 for i in "${queues[@]}"
 do
